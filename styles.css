@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #12181B;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Animation for fading in body */
+}
+/* Scroll Down Animation */
+.scroll-down {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #00D4AA;
+    margin-top: 20px;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.toggle button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.toggle .active {
+    background: #00D4AA;
+    transform: scale(1.1);
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Logo */
+.logo {
+    font-size: 2rem;
+    color: #00D4AA;
+    animation: logoAnimation 2s ease-in-out; /* Animation for logo */
+}
+
+@keyframes logoAnimation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Start Screen */
+#start-screen {
+    padding: 20px;
+    animation: fadeInUp 1s ease-in-out; /* Animation for start screen */
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pick-mark {
+    background: #1E2A32;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    animation: slideUp 0.5s ease-in-out; /* Slide-up animation for pick-mark */
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.toggle button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out; /* Smooth button background transition */
+}
+
+.toggle .active {
+    background: #00D4AA;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out; /* Button scaling effect */
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Hover scale effect */
+}
+
+.yellow {
+    background: #EFB841;
+    animation: fadeIn 1s ease-in-out; /* Button animation */
+}
+
+.blue {
+    background: #00D4AA;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.gray {
+    background: #2C3E50;
+    animation: fadeIn 1s ease-in-out;
+}
+.red {
+    background: #FF4C4C;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.red:hover {
+    background: #D43F3F;
+}
+
+
+/* Game Board */
+#game-screen {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    animation: fadeInUp 1s ease-in-out; /* Fade in header */
+}
+
+#restart-btn {
+    background: #EFB841;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Button transform effect */
+}
+
+#restart-btn:hover {
+    transform: scale(1.1); /* Hover effect for restart button */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    animation: fadeInUp 1s ease-in-out; /* Board fade-in effect */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #1E2A32;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out; /* Animation for cell interaction */
+}
+
+.cell:hover {
+    transform: scale(1.1); /* Cell scale effect on hover */
+}
+
+/* Scoreboard */
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Winner Screen (Popup) */
+/* Winner Screen (Popup) */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Set a lower z-index than winner-text */
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Hidden *ad*/
+    transition: visibility 1s, opacity 0.5s ease; /* Smooth popup transition */
+  }
+  
+  .popup.visible {
+    visibility: visible;
+    opacity: 1; /* Smoothly fade in */
+    animation: popupFadeIn 0.5s ease-in-out; /* Popup fade-in effect */
+  }
+  
+  @keyframes popupFadeIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Winner Text */
+  #winner-text {
+    position: relative; /* Ensure winner-text is on a higher layer */
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    color: black; /* Default to black */
+    z-index: 2; /* Place on top of the popup */
+    animation: pulse 1.5s infinite, blur 0.5s alternate infinite ease-in-out; /* Pulsing and blur effects */
+  }
+  
+  /* Popup Content */
+  .popup-content {
+    background: rgb(255, 254, 254);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    animation: popupContentSlide 0.5s ease-in-out; /* Slide animation for popup content */
+  }
+  
+  @keyframes popupContentSlide {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Button Styles for Popup */
+  .popup .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out; /* Smooth background transition */
+  }
+  
+  .popup .btn.gray {
+    background-color: gray;
+    color: white;
+  }
+  
+  .popup .btn.yellow {
+    background-color: yellow;
+    color: black;
+  }
+  
+  /* Fade-out Effect for Popup */
+  .popup.hidden {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Pulse Effect for Winner Text */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      color: black;
+    }
+    50% {
+      transform: scale(1.1);
+      color: red;
+    }
+    100% {
+      transform: scale(1);
+      color: rgb(8, 247, 247);
+    }
+  }
+  
+  /* Blur Effect for Winner Text */
+  @keyframes blur {
+    0% {
+      filter: blur(0px);
+    }
+    100% {
+      filter: blur(3px);
+    }
+  }
+  
